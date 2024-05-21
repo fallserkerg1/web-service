@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-background: #ecad00;
+    --bg-clear: #f3cb5e;
+    --bg-clear-dark : #757373;
+    --bg-dark : #1f1f1f;
+    --bg-dark-dark : #131313;
+}
+
+body {
+    width: 100%;
+    background-color: var(--bg-dark-dark);
+}
+
+/* header and menu */ 
+
+header {
+    width: 100%;
+    padding: 1.5rem 6rem;
+    background-color: var(--bg-dark);
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.logo a{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.fa-house {
+    color: var(--bg-background);
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.logo a:hover,
+ li a:hover {
+    color: var(--bg-clear-dark);
+}
+
+.toogle_btn {
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    display: none;
+}
+
+li a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 1.2rem;
+    font-weight: 600;
+}
+
+.btn_main {
+    color: #fff;
+    background-color: var(--bg-background);
+    padding: 10px 35px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: .5s;
+}
+
+.btn_main:hover {
+    border: 1px solid var(--bg-background);
+    background: transparent;
+    box-shadow: 1px 1px 5px 3px #ecad00;
+}
+
+/* header and menu */ 
+/* dropdown menu */
+
+.dropdown_menu {
+    display: none;
+}
+
+
+/*  Banner */ 
+
+.container-banner {
+    width: 100%;
+    height: 800px;
+    background: url('../img/back-1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box-title {
+    position: absolute;
+    top: 22rem;
+    padding: 0 8rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.box-title h2 {
+    color: var(--bg-clear);
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.box-title h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.box-title p {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn_action {
+    color: #fff;
+    font-size: 1.3rem;
+    background: transparent;
+    border: 1px solid #ecad00;
+    border-radius: 15px;
+    padding: 10px 45px;
+}
+
+
+/* Products */
+
+.conteiner-products {
+    width: 100%;
+    height: 300px;
+    padding: 0 10rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-services {
+    width: 400px;
+    height: 200px;
+    margin: 3.5rem auto;
+    text-align: center;
+    padding: 2.9rem 1.4rem;
+    border-radius: 25px;
+    background-color: var(--bg-dark);
+    cursor: pointer;
+}
+
+.box-services:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box-services i {
+    color: var(--bg-background);
+    font-size: 30px;
+    margin-bottom: 1rem;
+}
+
+.box-services h2 {
+    color: #fff;
+}
+
+.box-services h3 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+
+/*  RESPONSIVE */
+/* Header and Menu */
+
+@media (max-width: 998px) {
+    .toogle_btn {
+        display: block;
+    }
+
+    .links,
+    .btn_main {
+        display: none;
+    }
+
+    .container-banner{
+        height: 1000px;
+    }
+}
+
+@media (max-width: 542px) {
+    .box-services {
+        height: 400px;
+    }
+}
+
+
