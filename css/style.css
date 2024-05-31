@@ -13,9 +13,11 @@
 :root {
     --bg-background: #ecad00;
     --bg-clear: #f3cb5e;
-    --bg-clear-dark : #757373;
+    --bg-clear-dark : #ecad00;
     --bg-dark : #1f1f1f;
     --bg-dark-dark : #131313;
+    --bg-card-color: #444141;
+    --bg-hover-card: #beb291;
 }
 
 body {
@@ -42,6 +44,7 @@ header {
     color: #fff;
     font-size: 1.5rem;
     font-weight: 800;
+    transition: .5s;
 }
 
 .fa-house {
@@ -51,7 +54,8 @@ header {
 }
 
 .logo a:hover,
- li a:hover {
+.links a:hover,
+.dropdown_menu a:hover {
     color: var(--bg-clear-dark);
 }
 
@@ -62,11 +66,12 @@ header {
     display: none;
 }
 
-li a {
+.links a {
     color: #fff;
     font-size: 1.2rem;
     margin-right: 1.2rem;
     font-weight: 600;
+    transition: .5s;
 }
 
 .btn_main {
@@ -88,124 +93,134 @@ li a {
 /* dropdown menu */
 
 .dropdown_menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 6.5rem;
+    right: 2rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: 15px(blur);
+    border-radius: 15px;
+    padding: 0.4rem 8rem;
+}
+
+.dropdown_menu a {
+    color: #fff;
+    padding: 1.2rem 0;
+}
+
+.dropdown_menu.open {
     display: none;
 }
 
+.dropdown_menu {
+    display: none;
+}
 
-/*  Banner */ 
+/* --------- BANNER --------- */
 
-.container-banner {
+.banner {
     width: 100%;
     height: 800px;
+    padding: 0 10rem;
     background: url('../img/back-1.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.box-title {
-    position: absolute;
-    top: 22rem;
-    padding: 0 8rem;
+.banner-text {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
+    height: 800px;
 }
 
-.box-title h2 {
-    color: var(--bg-clear);
-    font-size: 2.8rem;
-    font-weight: 700;
-}
-
-.box-title h3 {
+.banner-text h2{
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.banner-text h3 {
+    color: #fff;
+    font-size: 1.4rem;
     font-weight: 600;
+    padding-bottom: 10px;
 }
 
-.box-title p {
+.banner-text p {
     color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-.btn_action {
-    color: #fff;
-    font-size: 1.3rem;
-    background: transparent;
-    border: 1px solid #ecad00;
-    border-radius: 15px;
-    padding: 10px 45px;
-}
-
-
-/* Products */
-
-.conteiner-products {
-    width: 100%;
-    height: 300px;
-    padding: 0 10rem;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.box-services {
-    width: 400px;
-    height: 200px;
-    margin: 3.5rem auto;
-    text-align: center;
-    padding: 2.9rem 1.4rem;
-    border-radius: 25px;
-    background-color: var(--bg-dark);
-    cursor: pointer;
-}
-
-.box-services:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.box-services i {
-    color: var(--bg-background);
-    font-size: 30px;
-    margin-bottom: 1rem;
-}
-
-.box-services h2 {
-    color: #fff;
-}
-
-.box-services h3 {
-    color: #fff;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
 }
+/* ---- btns ----- */
 
-
-
-/*  RESPONSIVE */
-/* Header and Menu */
-
-@media (max-width: 998px) {
-    .toogle_btn {
-        display: block;
-    }
-
-    .links,
-    .btn_main {
-        display: none;
-    }
-
-    .container-banner{
-        height: 1000px;
-    }
+.btns {
+    margin-top: 30px;
 }
 
-@media (max-width: 542px) {
-    .box-services {
-        height: 400px;
-    }
+.btn-text {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: var(--bg-background);
+    border-radius: 15px;
+    padding: 10px 45px;
+    margin-right: 15px;
+    transition: .5s;
 }
+
+.btn-text:hover {
+    border: 1px solid var(--bg-background);
+    background: transparent;
+    box-shadow: 1px 1px 5px 3px #ecad00;
+}
+
+/* --------- PRODUCTS --------- */
+
+.product-section {
+    width: 100%;
+    height: 300px;
+    margin-top: 10rem;
+}
+
+.container-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 4rem;
+}
+
+.card-product {
+    background: var(--bg-card-color);
+    border-radius: 25px;
+    text-align: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    width: 30%;
+    padding: 2rem 1rem;
+    transition: .5s;
+}
+
+.card-product:hover {
+    background: var(--bg-clear);
+}
+
+.card-product i {
+    color: var(--bg-background);
+    font-size: 2rem;
+    padding: 10px;
+}
+
+/* --------- SELLS --------- */
+/* --------- ABOUT --------- */
+/* --------- CONTACT --------- */
+
+
+
 
 
